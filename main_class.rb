@@ -11,11 +11,10 @@ class Integr
     loop do
       @n *= 2
       h = (b - a) / @n
-      x = a
       s = s1
       s1 = 0.0
       (0..@n - 1).each do |i|
-        s1 += (f(x + i * h) + f(x + (i + 1) * h)) * h / 2
+        s1 += (f(a + i * h) + f(a + (i + 1) * h)) * h / 2
       end
       break if (s1 - s).abs <= @eps
     end
